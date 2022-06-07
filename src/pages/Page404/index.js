@@ -8,7 +8,7 @@ export default class Pege404 extends React.Component {
 
   render() {
     return (
-      <Container>
+      <Container theme="green">
         <Menu>
           <h1>Página 404</h1>
           <Link to='/'>
