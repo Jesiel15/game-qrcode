@@ -30,7 +30,7 @@ const Button = styled.button`
 const DivButton = styled.div`
   &:hover Button {
     background-color: ${(props) => theme[props.theme].hover};
-    margin-left: 20%;
+    margin-left: 10%;
     padding: 15%;
     transition: ease 300ms;
   }
