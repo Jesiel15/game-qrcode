@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Character Movement Script</title>
+    <style>
+
+        body {
+            background-color: rgb(166, 166, 172);
+        }
+
+        div#player {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 0, 0, 0.673);
+            border: 2px solid rgb(0, 0, 0);
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+    
+    </style>
+</head>
+<body>
+
+<div id="player"></div>
+
+<script>
+
+var horizontalAxisX = 0;
+var verticalAxisY = 0;
+var pixels = "px";
+
+window.addEventListener("keydown", playerMovement);
+
+function playerMovement() {
+    var player = window.document.getElementById("player");
+    var key = event.keyCode;
+    
+    if (key == 37) {
+        // tecla da esquerda
+        // Se o código da tecla pressionada for igual a 37 execute isso.
+        horizontalAxisX += -10;
+        player.style.left = horizontalAxisX + pixels;
+    }
+
+    else if (key == 38) {
+        // tecla de cima
+        // Se o código da tecla pressionada for igual a 37 execute isso.
+        verticalAxisY += -10;
+        player.style.top = verticalAxisY + pixels;
+    }
+
+    else if (key == 39) {
+        // tecla da direita
+        // Se o código da tecla pressionada for igual a 37 execute isso.
+        horizontalAxisX += 10;
+        player.style.left = horizontalAxisX + pixels;
+    }
+
+    else if (key == 40) {
+        // tecla de baixo
+        // Se o código da tecla pressionada for igual a 37 execute isso.
+        verticalAxisY += 10;
+        player.style.top = verticalAxisY + pixels;
+    }
+}
+
+</script>
+
+</body>
+</html>
