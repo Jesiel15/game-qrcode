@@ -23,7 +23,7 @@ export default class Games extends React.Component {
               </Button>
             </DivButton>
           </Link>
-          <Link to='/'>
+          <Link to='/home'>
             <DivButton theme="blackpink">
               <Button theme="blackpink" >
                 Back

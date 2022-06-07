@@ -11,7 +11,7 @@ export default class Pege404 extends React.Component {
       <Container theme="green">
         <Menu>
           <h1>Página 404</h1>
-          <Link to='/'>
+          <Link to='/home'>
             <Button theme="blackpink" >
               Página inicial
             </Button>
