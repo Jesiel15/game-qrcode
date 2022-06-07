@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/home/static/js/main.4abe92b6.js",
-    "static/js/787.444defb3.chunk.js": "/home/static/js/787.444defb3.chunk.js",
-    "index.html": "/home/index.html",
-    "main.4abe92b6.js.map": "/home/static/js/main.4abe92b6.js.map",
-    "787.444defb3.chunk.js.map": "/home/static/js/787.444defb3.chunk.js.map"
+    "main.js": "/game-qrcode/static/js/main.5668a901.js",
+    "static/js/787.444defb3.chunk.js": "/game-qrcode/static/js/787.444defb3.chunk.js",
+    "index.html": "/game-qrcode/index.html",
+    "main.5668a901.js.map": "/game-qrcode/static/js/main.5668a901.js.map",
+    "787.444defb3.chunk.js.map": "/game-qrcode/static/js/787.444defb3.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.4abe92b6.js"
+    "static/js/main.5668a901.js"
   ]
 }
