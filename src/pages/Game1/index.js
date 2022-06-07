@@ -11,7 +11,6 @@ export default class Play extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: false,
       y: 0,
       x: 0,
       width: 0,
@@ -21,7 +20,6 @@ export default class Play extends React.Component {
     };
 
     this.loadingGame = this.loadingGame.bind(this);
-    this.stopLoading = this.stopLoading.bind(this);
 
     this.divRef = React.createRef()
     this.player = React.createRef()
@@ -39,16 +37,9 @@ export default class Play extends React.Component {
     let tamanho = this.player.current.offsetWidth
 
     this.setState({
-      loading: true,
       width: widthDiv,
       height: heightDiv,
       tamanhoPlayer: tamanho,
-    });
-  }
-
-  stopLoading() {
-    this.setState({
-      loading: false
     });
   }
 
@@ -57,17 +48,15 @@ export default class Play extends React.Component {
   }
 
   detectKeyDown = (e) => {
-    let key = 0
     let cont = 0
-    if (e.key === "ArrowLeft") {
-      key = 1
+    console.log("key press", e.key)
+    if (e.key === "ArrowLeft" || e.key === "a") {
       if (this.state.x !== 0) {
         cont = -20
       }
       this.setState({ x: this.state.x + cont });
 
-    } else if (e.key === "ArrowRight") {
-      key = 2
+    } else if (e.key === "ArrowRight" || e.key === "d") {
       if (this.state.x < this.state.width) {
         if (this.state.x + (this.state.tamanhoPlayer * 2 / 3) >= this.state.width) {
           cont = 0
@@ -77,15 +66,13 @@ export default class Play extends React.Component {
       }
       this.setState({ x: this.state.x + cont });
 
-    } else if (e.key === "ArrowUp") {
-      key = 3
+    } else if (e.key === "ArrowUp" || e.key === "w") {
       if (this.state.y !== 0) {
         cont = -20
       }
       this.setState({ y: this.state.y + cont });
 
-    } else if (e.key === "ArrowDown") {
-      key = 4
+    } else if (e.key === "ArrowDown" || e.key === "s") {
       if (this.state.y < this.state.height) {
         if (this.state.y + (this.state.tamanhoPlayer / 2) >= this.state.width) {
           cont = 0
@@ -95,35 +82,23 @@ export default class Play extends React.Component {
       }
       this.setState({ y: this.state.y + cont });
     }
-
-    this.setState({
-      position: key
-    });
   }
 
   render() {
-    const {  position, x, y, width } = this.state
-    // console.log("x:", x, " --  y:", y)
-    // console.log("width ", width)
-    // console.log("height ", height)
+    const { x, y, width } = this.state
     return (
-      <>
-        {/* <GetWidthContainerDefault ref={this.divRef}></GetWidthContainerDefault> */}
-        {/* <Player ref={this.player} left={x} top={y} width={width} />  */}
-        <PlayContainer  theme="pink">
-          <GetWidthContainer ref={this.divRef}>
-            <Player theme="green" ref={this.player} left={x} top={y} width={width} />
-          </GetWidthContainer>
-          <Menu>
-            <Link to='/games'>
-              <Button theme="blackpink" onClick={this.stopLoading}>
-                Back Menu - Tecla:{position}
-              </Button>
-            </Link>
-          </Menu>
-        </PlayContainer>
-
-      </>
+      <PlayContainer theme="pink">
+        <GetWidthContainer ref={this.divRef}>
+          <Player theme="green" ref={this.player} left={x} top={y} width={width} />
+        </GetWidthContainer>
+        <Menu>
+          <Link to='/games'>
+            <Button theme="blackpink">
+              Back
+            </Button>
+          </Link>
+        </Menu>
+      </PlayContainer>
     );
   }
 }
