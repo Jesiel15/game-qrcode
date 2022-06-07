@@ -9,7 +9,10 @@ padding-top: 10%;
 
 /* height: 10vh; */
 border-radius: 100%;
-background-color:  ${colors.cian};
+/* background-color:  ${colors.cian};
+ */
+background-color: ${(props) => theme[props.theme].color};
+
 box-shadow: 5px 5px 10px ${colors.black};
 position: absolute;
 /* top: 100px; */
@@ -19,6 +22,25 @@ left: ${(props) => `${props.left}px`};
 /* transition: ease top 50ms;
 transition: ease left 50ms; */
 `
+
+
+const theme = {
+  cian: {
+    color: colors.cian,
+  },
+  green: {
+    color: colors.green, 
+  },
+  blue: {
+    color: colors.blue, 
+  },
+  pink: {
+    color: colors.pink, 
+  },
+  gray: {
+    color: colors.gray
+  }
+}
 export { Player };
 
 

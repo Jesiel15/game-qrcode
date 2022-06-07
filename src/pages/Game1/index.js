@@ -110,12 +110,12 @@ export default class Play extends React.Component {
       <>
         {/* <GetWidthContainerDefault ref={this.divRef}></GetWidthContainerDefault> */}
         {/* <Player ref={this.player} left={x} top={y} width={width} />  */}
-        <PlayContainer>
+        <PlayContainer  theme="pink">
           <GetWidthContainer ref={this.divRef}>
-            <Player ref={this.player} left={x} top={y} width={width} />
+            <Player theme="green" ref={this.player} left={x} top={y} width={width} />
           </GetWidthContainer>
           <Menu>
-            <Link to='/'>
+            <Link to='/games'>
               <Button theme="blackpink" onClick={this.stopLoading}>
                 Back Menu - Tecla:{position}
               </Button>
