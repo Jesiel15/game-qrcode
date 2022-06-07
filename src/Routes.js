@@ -18,6 +18,9 @@ export default () => {
       <Route exact path="/">
         <Home />
       </Route>
+      <Route exact path="/game-qrcode">
+        <Home />
+      </Route>
       <Route exact path="/games">
         <Games />
       </Route>
