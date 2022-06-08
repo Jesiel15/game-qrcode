@@ -8,7 +8,7 @@ const GetWidthContainer = styled.div`
   justify-content: center;
   background-color: ${colors.darkblue};
   width: 90%;
-  margin: 5%;
+  margin: 2%;
   border-radius: 20px;
   box-shadow: 10px 10px 20px ${colors.black};
   padding-top: 40%;

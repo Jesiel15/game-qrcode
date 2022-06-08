@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from '../../components/Button'
+import { Button, DivButton } from '../../components/Button'
 import { Player } from '../../components/Player'
 import { Menu } from '../../components/Menu'
 import { GetWidthContainer } from '../../components/GetWidthContainer'
-
-
 import { PlayContainer } from '../../components/PlayContainer'
+import { Keyboard, Key, RowWASD, HUD } from '../../components/Keyboard'
 export default class Play extends React.Component {
   constructor(props) {
     super(props);
@@ -87,15 +86,37 @@ export default class Play extends React.Component {
   render() {
     const { x, y, width } = this.state
     return (
-      <PlayContainer theme="pink">
+      <PlayContainer theme="cian">
+        <HUD>
+          <Keyboard>
+            <Key>W</Key>
+            <RowWASD>
+              <Key>A</Key>
+              <Key>S</Key>
+              <Key>D</Key>
+            </RowWASD>
+          </Keyboard>
+          <Keyboard>
+            <Key>↾</Key>
+            <RowWASD>
+              <Key>↼</Key>
+              <Key>⇃</Key>
+              <Key>⇀</Key>
+            </RowWASD>
+          </Keyboard>
+        </HUD>
+
+
         <GetWidthContainer ref={this.divRef}>
           <Player theme="green" ref={this.player} left={x} top={y} width={width} />
         </GetWidthContainer>
         <Menu>
           <Link to='/games'>
-            <Button theme="blackpink">
-              Back
-            </Button>
+            <DivButton theme="blackpink">
+              <Button theme="blackpink">
+                Back
+              </Button>
+            </DivButton>
           </Link>
         </Menu>
       </PlayContainer>
