@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import colors from '../../assets/Colors'
+import styled from "styled-components";
+import colors from "../../assets/Colors";
 
 const Button = styled.button`
   background-color: ${(props) => theme[props.theme].default};
@@ -9,14 +9,16 @@ const Button = styled.button`
   text-transform: uppercase;
   margin: 10px 0px;
   cursor: pointer;
- 
+  position: relative; /* Necessário para o z-index funcionar */
+  z-index: 10; /* Faz o botão ficar acima de outros elementos */
+
   /* &:hover {
     background-color: ${(props) => theme[props.theme].hover};
     margin-left: 20%;
     padding: 15%;
     transition: ease 300ms;
   } */
-  
+
   &:disabled {
     cursor: default;
     opacity: 0.7;
@@ -26,24 +28,26 @@ const Button = styled.button`
   box-shadow: 4px 4px 15px ${colors.black};
   border: 0;
   width: 100%;
-`
+`;
+
 const DivButton = styled.div`
+  position: relative;
   &:hover Button {
     background-color: ${(props) => theme[props.theme].hover};
     margin-left: 10%;
     padding: 15%;
     transition: ease 300ms;
   }
-`
+`;
 const theme = {
   blackblue: {
     default: colors.blue,
-    hover: colors.darkblue
+    hover: colors.darkblue,
   },
   blackpink: {
     default: colors.gray,
-    hover: colors.pink
-  }
-}
+    hover: colors.pink,
+  },
+};
 
 export { Button, DivButton };
